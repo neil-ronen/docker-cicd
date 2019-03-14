@@ -16,7 +16,6 @@ node {
        def app = docker.build("neil21975/jenkins-demo:${commit_id}", '.').push()
      }
      stage('docker run') {
-     docker run -ti -p 8080:800 neil21975/jenkins-demo:${commit_id}
-     }
+        docker run -ti --name neil -p 8080:800 neil21975/jenkins-demo:latest
    }
 }
