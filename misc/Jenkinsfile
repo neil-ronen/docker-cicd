@@ -13,7 +13,7 @@ node {
    }
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', '76a06bb5-e836-4815-9571-dc88cf50c077') {
-       def app = docker.build("yanivomc/docker-nodejs-demo:${commit_id}", '.').push()
+       def app = docker.build("neil21975/jenkins-demo:${commit_id}", '.').push()
      }
    }
 }
